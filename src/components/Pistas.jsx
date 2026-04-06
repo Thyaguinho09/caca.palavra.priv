@@ -1,4 +1,4 @@
-export default function ClueList({ clues }) {
+export default function Pistas({ clues }) {
   return (
     <div className="panel">
       <div className="ptitle">▶ PISTAS DO CASO</div>

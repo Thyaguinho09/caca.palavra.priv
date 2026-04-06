@@ -1,0 +1,39 @@
+.cell {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Orbitron', sans-serif;
+  font-size: .78rem;
+  font-weight: 700;
+  border: 1px solid #0d1e2e;
+  background: #05080f;
+  transition: background .08s, color .08s, border-color .08s;
+}
+
+@media (max-width: 420px) {
+  .cell { width: 30px; height: 30px; font-size: .62rem; }
+}
+
+.cell.found {
+  background: rgba(57, 255, 20, .07);
+  color: var(--g);
+  border-color: rgba(57, 255, 20, .35);
+}
+.cell.found .cl { text-decoration: line-through; }
+
+.cell.sel {
+  background: rgba(0, 229, 255, .2);
+  color: var(--c);
+  border-color: var(--c);
+  box-shadow: inset 0 0 8px rgba(0, 229, 255, .3);
+}
+
+.cell:not(.found):not(.sel):hover { background: rgba(0, 229, 255, .05); }
+
+.cell.flash { animation: flashCell .5s ease; }
+@keyframes flashCell {
+  0%   { box-shadow: 0 0 0 3px var(--g); }
+  100% { box-shadow: 0 0 0 0 transparent; }
+}
