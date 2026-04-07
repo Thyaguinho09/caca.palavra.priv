@@ -1,7 +1,7 @@
 // ─── case2.js ───────────────────────────────────────────────
 const case2 = {
   id: 2,
-  difficulty: "INTERMEDIÁRIO",
+  difficulty: "DIÍCIL",
   diffColor: "#ffd600",
   title: "A Queda do Servidor",
   subtitle: "O banco de dados parou de responder às 03h da manhã...",

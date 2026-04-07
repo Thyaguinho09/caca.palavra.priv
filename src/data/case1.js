@@ -1,7 +1,7 @@
 // ─── case1.js ───────────────────────────────────────────────
 const case1 = {
   id: 1,
-  difficulty: "FÁCIL",
+  difficulty: "SUPER DIFÍCIL",
   diffColor: "#39ff14",
   title: "O Bug do Estagiário",
   subtitle: "O sistema caiu na primeira semana do novo estagiário...",

@@ -10,7 +10,7 @@
 //
 const case4 = {
   id: 4,
-  difficulty: "DIFÍCIL",
+  difficulty: "FÁCIL",
   diffColor: "#ff2d55",
   title: "A Brecha de Segurança",
   subtitle: "Dados de 50.000 usuários foram expostos. Encontre o responsável.",
