@@ -53,10 +53,6 @@ const case2 = {
     // invertido ←
     { word: "QUERY",
       cells: [{r:7,c:4},{r:7,c:3},{r:7,c:2},{r:7,c:1},{r:7,c:0}] },
-
-    // vertical ↓
-    { word: "AUTH",
-      cells: [{r:8,c:0},{r:7,c:0},{r:6,c:0},{r:5,c:0}] },
   ],
 
   clues: [
