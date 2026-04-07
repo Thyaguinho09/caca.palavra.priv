@@ -1,7 +1,7 @@
 // ─── case2.js (grid totalmente preenchido) ──────────────────
 const case2 = {
   id: 2,
-  difficulty: "DIÍCIL",
+  difficulty: "MEDIO",
   diffColor: "#ffd600",
   title: "A Queda do Servidor",
   subtitle: "O banco de dados parou de responder às 03h da manhã...",
