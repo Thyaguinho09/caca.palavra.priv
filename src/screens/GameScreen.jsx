@@ -121,7 +121,10 @@ export default function GameScreen({ puzzle, onBack, onSolve, onTimeout }) {
             border: `1px solid ${puzzle.diffColor}44`,
           }}
         >
-          {puzzle.isTutorial ? "TUTORIAL" : `CASO ${puzzle.id}`} · {puzzle.difficulty}
+          {puzzle.isTutorial
+            ? "TUTORIAL"
+            : `CASO ${puzzle.id} · ${puzzle.difficulty}`
+          }
         </div>
         <div className="g-title">{puzzle.title}</div>
         <div className="g-sub">{puzzle.subtitle}</div>
