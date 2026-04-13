@@ -71,8 +71,6 @@ const case2 = {
       ],
     },
     
-
-    // horizontal →
     {
       word: "SERVER",
       cells: [
