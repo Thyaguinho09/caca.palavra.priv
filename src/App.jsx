@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import "./styles/global.css";
 import PUZZLES from "./data/index";
-import IntroScreen from "./screens/IntroScreen";
-import GameScreen from "./screens/GameScreen";
+import IntroScreen  from "./screens/IntroScreen";
+import GameScreen   from "./screens/GameScreen";
 import ResultScreen from "./screens/ResultScreen";
 
 export default function App() {

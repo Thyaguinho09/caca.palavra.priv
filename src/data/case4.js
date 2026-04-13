@@ -118,6 +118,9 @@ const case4 = {
   languages: ["GRAPHQL", "PYTHON", "RUST", "GO"],
   locations: ["KUBERNETES", "REDIS", "KAFKA", "DATABASE"],
 
+  hiddenAnswer: "INVASAO",
+  narrative:
+    "O caso mais complexo da série. Uma cadeia de falhas encobriu o verdadeiro culpado por dias. A vulnerabilidade estava na API exposta sem autenticação — alguém internamente sabia do buraco e explorou antes que fosse corrigido. As evidências foram cuidadosamente apagadas, mas os logs de REDE não mentem.",
   culprit: "EMERSON",
   language: "GRAPHQL",
   location: "KUBERNETES",

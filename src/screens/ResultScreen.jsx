@@ -17,6 +17,7 @@ export default function ResultScreen({ puzzle, pidx, onNext, onBack }) {
         {isTutorial ? "VOCÊ ESTÁ PRONTO" : "INVESTIGAÇÃO CONCLUÍDA"}
       </div>
 
+      {/* Narrative explanation */}
       {puzzle.narrative && (
         <div className="res-narrative">
           <div className="res-narrative-title">📋 RELATÓRIO NARRATIVO</div>
@@ -24,7 +25,7 @@ export default function ResultScreen({ puzzle, pidx, onNext, onBack }) {
         </div>
       )}
 
-
+      {/* Final report — skip for tutorial */}
       {!isTutorial && (
         <div className="res-card">
           <div className="ptitle" style={{ marginBottom: ".4rem" }}>▶ RELATÓRIO FINAL</div>
@@ -41,6 +42,7 @@ export default function ResultScreen({ puzzle, pidx, onNext, onBack }) {
         </div>
       )}
 
+      {/* Clue breakdown — show how clues pointed to the answer */}
       {!isTutorial && puzzle.clues && (
         <div className="res-clues-breakdown">
           <div className="res-clues-title">🔍 COMO AS PISTAS APONTAVAM PARA A SOLUÇÃO</div>
