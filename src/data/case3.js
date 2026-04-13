@@ -21,25 +21,44 @@ const case3 = {
   ],
 
   wordList: [
-    // → 
+    // →
     {
       word: "TYPESCRIPT",
       cells: [
-        { r: 0, c: 0 }, { r: 1, c: 0 }, { r: 2, c: 0 }, { r: 3, c: 0 }, { r: 4, c: 0 },
-        { r: 5, c: 0 }, { r: 6, c: 0 }, { r: 7, c: 0 }, { r: 8, c: 0 }, { r: 9, c: 0 },
+        { r: 0, c: 0 },
+        { r: 1, c: 0 },
+        { r: 2, c: 0 },
+        { r: 3, c: 0 },
+        { r: 4, c: 0 },
+        { r: 5, c: 0 },
+        { r: 6, c: 0 },
+        { r: 7, c: 0 },
+        { r: 8, c: 0 },
+        { r: 9, c: 0 },
       ],
     },
     {
       word: "FRONTEND",
       cells: [
-        { r: 0, c: 1 }, { r: 1, c: 2 }, { r: 2, c: 3 }, { r: 3, c: 4 },
-        { r: 4, c: 5 }, { r: 5, c: 6 }, { r: 6, c: 7 }, { r: 7, c: 8 },
+        { r: 0, c: 1 },
+        { r: 1, c: 2 },
+        { r: 2, c: 3 },
+        { r: 3, c: 4 },
+        { r: 4, c: 5 },
+        { r: 5, c: 6 },
+        { r: 6, c: 7 },
+        { r: 7, c: 8 },
       ],
     },
     {
       word: "DEPLOY",
       cells: [
-        { r: 11, c: 9 }, { r: 10, c: 9 }, { r: 9, c: 9 }, { r: 8, c: 9 }, { r: 7, c: 9 }, { r: 6, c: 9 },
+        { r: 11, c: 9 },
+        { r: 10, c: 9 },
+        { r: 9, c: 9 },
+        { r: 8, c: 9 },
+        { r: 7, c: 9 },
+        { r: 6, c: 9 },
       ],
     },
 
@@ -47,20 +66,35 @@ const case3 = {
     {
       word: "THYAGO",
       cells: [
-        { r: 11, c: 1 }, { r: 10, c: 2 }, { r: 9, c: 3 }, { r: 8, c: 4 }, { r: 7, c: 5 }, { r: 6, c: 6 },
+        { r: 11, c: 1 },
+        { r: 10, c: 2 },
+        { r: 9, c: 3 },
+        { r: 8, c: 4 },
+        { r: 7, c: 5 },
+        { r: 6, c: 6 },
       ],
     },
     {
       word: "ISABELLE",
       cells: [
-        { r: 1, c: 1 }, { r: 2, c: 1 }, { r: 3, c: 1 }, { r: 4, c: 1 },
-        { r: 5, c: 1 }, { r: 6, c: 1 }, { r: 7, c: 1 }, { r: 8, c: 1 },
+        { r: 1, c: 1 },
+        { r: 2, c: 1 },
+        { r: 3, c: 1 },
+        { r: 4, c: 1 },
+        { r: 5, c: 1 },
+        { r: 6, c: 1 },
+        { r: 7, c: 1 },
+        { r: 8, c: 1 },
       ],
     },
     {
       word: "CRASH",
       cells: [
-        { r: 0, c: 5 }, { r: 1, c: 6 }, { r: 2, c: 7 }, { r: 3, c: 8 }, { r: 4, c: 9 },
+        { r: 0, c: 5 },
+        { r: 1, c: 6 },
+        { r: 2, c: 7 },
+        { r: 3, c: 8 },
+        { r: 4, c: 9 },
       ],
     },
 
@@ -68,14 +102,23 @@ const case3 = {
     {
       word: "TESTS",
       cells: [
-        { r: 0, c: 9 }, { r: 1, c: 9 }, { r: 2, c: 9 }, { r: 3, c: 9 }, { r: 4, c: 9 },
+        { r: 0, c: 9 },
+        { r: 1, c: 9 },
+        { r: 2, c: 9 },
+        { r: 3, c: 9 },
+        { r: 4, c: 9 },
       ],
     },
 
     {
       word: "MOBILE",
       cells: [
-        { r: 11, c: 3 }, { r: 11, c: 4 }, { r: 11, c: 5 }, { r: 11, c: 6 }, { r: 11, c: 7 }, { r: 11, c: 8 },
+        { r: 11, c: 3 },
+        { r: 11, c: 4 },
+        { r: 11, c: 5 },
+        { r: 11, c: 6 },
+        { r: 11, c: 7 },
+        { r: 11, c: 8 },
       ],
     },
 
@@ -83,14 +126,14 @@ const case3 = {
       word: "DOCKER",
       cells: [
         { r: 5, c: 8 },
-    { r: 6, c: 8 },
-    { r: 7, c: 8 },
-    { r: 8, c: 8 },
-    { r: 9, c: 8 },
-    { r: 10, c: 8 },]
+        { r: 6, c: 8 },
+        { r: 7, c: 8 },
+        { r: 8, c: 8 },
+        { r: 9, c: 8 },
+        { r: 10, c: 8 },
+      ],
     },
   ],
-
 
   clues: [
     "O deploy aconteceu no final do expediente de sexta",
@@ -104,6 +147,13 @@ const case3 = {
   languages: ["TYPESCRIPT", "PYTHON", "KOTLIN", "SWIFT"],
   locations: ["MOBILE", "BACKEND", "DOCKER", "FRONTEND"],
 
+  culprit: "THYAGO",
+  language: "TYPESCRIPT",
+  location: "MOBILE",
+
+  hiddenAnswer: "URGENCIA",
+  narrative:
+    "O deploy de sexta-feira nunca deveria ter ido para produção. Uma mudança de última hora no módulo FRONT rompeu o fluxo de autenticação. O responsável apressou o COMMIT sem rodar os testes, confiando demais na cobertura existente. O TIME todo pagou o preço no fim de semana.",
   culprit: "THYAGO",
   language: "TYPESCRIPT",
   location: "MOBILE",
