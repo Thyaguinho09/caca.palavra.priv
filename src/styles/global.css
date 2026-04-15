@@ -182,7 +182,7 @@ body::after {
 }
 
 .g-sub {
-  color: #1e3d55;
+  color: #0245FF;
   font-size: .72rem;
   margin-top: .2rem;
 }
@@ -211,7 +211,7 @@ body::after {
   font-family: 'Orbitron', sans-serif;
   font-size: .52rem;
   letter-spacing: 3px;
-  color: #1e3d55;
+  color: #0245FF;
   margin-bottom: .7rem;
   padding-bottom: .35rem;
   border-bottom: 1px solid var(--brd);
