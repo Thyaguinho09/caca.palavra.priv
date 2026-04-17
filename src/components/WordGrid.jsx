@@ -66,4 +66,3 @@ export default function WordGrid({ puzzle, foundSet, dragSet, flash, errorFlash,
     </div>
   );
 }
-
