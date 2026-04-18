@@ -10,40 +10,30 @@ export default function useRanking() {
         localStorage.setItem("ranking", JSON.stringify(ranking));
     }, [ranking]);
 
-    function calculateStars({ timeSpent, hintsUsed, maxTime }) {
-        if (timeSpent <= maxTime * 0.5 && hintsUsed === 0) return 3;
-        if (timeSpent <= maxTime) return 2;
-        return 1;
+    // Lógica das estrelas baseada na imagem e solicitação
+    function calculateStars({ timeSpent, hintsUsed, allFound }) {
+        let stars = 0;
+        if (allFound) stars += 1;          // Objetivo 1: Encontrar tudo
+        if (hintsUsed === 0) stars += 1;   // Objetivo 2: Sem dicas
+        if (timeSpent <= 90) stars += 1;   // Objetivo 3: Menos de 1:30
+        return stars;
     }
 
-    function updateRanking({
-        name,
-        score,
-        timeSpent,
-        hintsUsed,
-        wrongAttempts,
-        maxTime
-    }) {
-        const stars = calculateStars({ timeSpent, hintsUsed, maxTime });
-
-        const newPlayer = {
+    function updateRanking({ name, score, timeSpent, hintsUsed, allFound }) {
+        const stars = calculateStars({ timeSpent, hintsUsed, allFound });
+        const newEntry = {
             name,
             score,
             stars,
             timeSpent,
-            wrongAttempts
+            date: new Date().toLocaleDateString()
         };
 
-        const updated = [...ranking, newPlayer];
+        const updated = [...ranking, newEntry]
+            .sort((a, b) => b.score - a.score || a.timeSpent - b.timeSpent)
+            .slice(0, 10); // Mantém o Top 10
 
-        // ordenação inteligente
-        updated.sort((a, b) => {
-            if (b.stars !== a.stars) return b.stars - a.stars;
-            if (a.timeSpent !== b.timeSpent) return a.timeSpent - b.timeSpent;
-            return a.wrongAttempts - b.wrongAttempts;
-        });
-
-        setRanking(updated.slice(0, 10)); // top 10
+        setRanking(updated);
     }
 
     return { ranking, updateRanking };
