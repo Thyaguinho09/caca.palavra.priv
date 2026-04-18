@@ -10,28 +10,26 @@ export default function useRanking() {
         localStorage.setItem("ranking", JSON.stringify(ranking));
     }, [ranking]);
 
-    // Lógica das estrelas baseada na imagem e solicitação
-    function calculateStars({ timeSpent, hintsUsed, allFound }) {
+    function updateRanking({ name, score, timeSpent, allFound, hintsUsed, puzzleTitle }) {
+        // Cálculo das estrelas (conforme imagem anterior)
         let stars = 0;
-        if (allFound) stars += 1;          // Objetivo 1: Encontrar tudo
-        if (hintsUsed === 0) stars += 1;   // Objetivo 2: Sem dicas
-        if (timeSpent <= 90) stars += 1;   // Objetivo 3: Menos de 1:30
-        return stars;
-    }
+        if (allFound) stars += 1;
+        if (hintsUsed === 0) stars += 1;
+        if (timeSpent <= 90) stars += 1;
 
-    function updateRanking({ name, score, timeSpent, hintsUsed, allFound }) {
-        const stars = calculateStars({ timeSpent, hintsUsed, allFound });
         const newEntry = {
             name,
             score,
-            stars,
             timeSpent,
+            stars,
+            puzzleTitle, // Agora salva qual caso foi resolvido
             date: new Date().toLocaleDateString()
         };
 
+        // Ordena por maior pontuação e menor tempo
         const updated = [...ranking, newEntry]
             .sort((a, b) => b.score - a.score || a.timeSpent - b.timeSpent)
-            .slice(0, 10); // Mantém o Top 10
+            .slice(0, 15); 
 
         setRanking(updated);
     }
