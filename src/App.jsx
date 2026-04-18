@@ -6,22 +6,24 @@ import PUZZLES from './data/index';
 import './styles/global.css';
 import useRanking from "./hooks/useRanking";
 
-
 export default function App() {
   const [screen, setScreen] = useState('intro');
   const [currentPuzzleIdx, setCurrentPuzzleIdx] = useState(0);
+
+  const { ranking, updateRanking } = useRanking();
+
   const [progress, setProgress] = useState(() => {
     const saved = localStorage.getItem('gameProgress');
     return saved ? JSON.parse(saved) : 0;
   });
 
-  // Estado do jogador para ranking
+  // Estado do jogador
   const [playerStats, setPlayerStats] = useState(() => {
     const saved = localStorage.getItem('playerStats');
     return saved
       ? JSON.parse(saved)
       : {
-          name: 'Você',
+          name: '',
           totalScore: 0,
           casesSolved: 0,
           totalTipsUsed: 0,
@@ -42,12 +44,34 @@ export default function App() {
     localStorage.setItem('playerStats', JSON.stringify(playerStats));
   }, [progress, playerStats]);
 
+  // Definir nome do jogador
+  const setPlayerName = (name) => {
+    setPlayerStats(prev => ({ ...prev, name }));
+  };
+
   const handleStart = (idx) => {
     setCurrentPuzzleIdx(idx);
     setScreen('game');
   };
 
   const handleSolve = (score, hintsUsed, wrongAttempts, timeSpent) => {
+    const puzzle = PUZZLES[currentPuzzleIdx];
+
+    // Nome final (fallback automático)
+    const finalName =
+      playerStats.name || "Agente_" + Math.floor(Math.random() * 1000);
+
+    // Atualiza ranking
+    updateRanking({
+      name: finalName,
+      score: score,
+      timeSpent: timeSpent,
+      hintsUsed: hintsUsed,
+      allFound: true,
+      puzzleTitle: puzzle.title
+    });
+
+    // Atualiza stats do jogador
     setPlayerStats((prev) => {
       const newStats = { ...prev };
 
@@ -56,7 +80,7 @@ export default function App() {
       newStats.totalTipsUsed += hintsUsed;
       newStats.totalWrongAttempts += wrongAttempts;
 
-      // Melhor tempo por caso
+      // Melhor tempo
       if (
         !newStats.bestTimePerCase[currentPuzzleIdx] ||
         timeSpent < newStats.bestTimePerCase[currentPuzzleIdx]
@@ -74,7 +98,7 @@ export default function App() {
       return newStats;
     });
 
-    // Desbloqueia próximo caso
+    // Progresso
     if (currentPuzzleIdx + 1 > progress && currentPuzzleIdx + 1 < PUZZLES.length) {
       setProgress(currentPuzzleIdx + 1);
     }
@@ -106,6 +130,8 @@ export default function App() {
           onStart={handleStart}
           progress={progress}
           playerStats={playerStats}
+          ranking={ranking}
+          setPlayerName={setPlayerName}
         />
       )}
 
@@ -113,9 +139,7 @@ export default function App() {
         <GameScreen
           puzzle={PUZZLES[currentPuzzleIdx]}
           onBack={handleBack}
-          onSolve={(score, hintsUsed, wrongAttempts, timeSpent) =>
-            handleSolve(score, hintsUsed, wrongAttempts, timeSpent)
-          }
+          onSolve={handleSolve}
           onTimeout={handleTimeout}
           playerStats={playerStats}
         />
